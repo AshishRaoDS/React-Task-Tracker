@@ -49,10 +49,12 @@ const addTask = (task)=>{
 }
 
   return (
+    <div className={showAddTask? "" :"body"}>
     <div className="container">
      <Header onAdd={()=>setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
      {showAddTask && <AddTask onAdd={addTask}/> }
      {tasks.length ? <Tasks tasks={tasks} onToggle={toggleReminder} onDelete={onDelete}/> : "No tasks left"}
+    </div>
     </div>
   );
 }
